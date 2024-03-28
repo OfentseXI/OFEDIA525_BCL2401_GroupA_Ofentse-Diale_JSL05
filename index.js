@@ -11,7 +11,7 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
-    { title: "Depressed Jim Carrey/Clementine", artist: "Baldemar", genre: "R&B" },
+    { title: "Depressed Jim Carrey/Clementine", artist: "Baldamar", genre: "R&B" },
     { title: "Fool for you", artist: "Kaidraroo", genre: "Pop" },
     { title: "Valentine's Curse", artist: "Banes World", genre: "R&B" },
     { title: "Running up that hill", artist: "Kate Bush", genre: "Pop" },
