@@ -47,5 +47,41 @@ function generatePlaylist(guardians, songs) {
     return playlists;
 }
 
-// Call generatePlaylist and display the playlists for each Guardian
-generatePlaylist(guardians, songs);
+// Call generatePlaylist
+const playlists = generatePlaylist(guardians, songs);
+
+// Display the playlists for each Guardian
+const playlistsDiv = document.getElementById('playlists');
+Object.keys(playlists).forEach((guardian) => {
+  const playlistContainer = document.createElement("div");
+  playlistContainer.classList.add("playlist");
+
+  const playlistTitle = document.createElement("h2");
+  playlistTitle.textContent = `${guardian}'s Playlist:`;
+  playlistContainer.appendChild(playlistTitle);
+
+  const playlistList = document.createElement("ul");
+  playlists[guardian].forEach((song) => {
+    const listItem = document.createElement("ul");
+    const songTitle = document.createElement("span");
+    songTitle.textContent = song;
+    songTitle.style.textDecoration = "underline";
+    songTitle.style.color = "yellow";
+    songTitle.style.fontWeight = "bold";
+    listItem.appendChild(songTitle);
+
+    // Adding artist name
+    const songArtist = document.createElement("span");
+    const artistName = songs.find((s) => s.title === song).artist;
+    songArtist.textContent = " by " + artistName;
+
+    // Appending artist name to the list item
+    listItem.appendChild(songArtist);
+
+    // Appending list item to the playlist list
+    playlistList.appendChild(listItem);
+  });
+  playlistContainer.appendChild(playlistList);
+
+  playlistsDiv.appendChild(playlistContainer);
+});
